@@ -10,11 +10,17 @@ declare namespace WebSocketStream {
   type WebSocketDuplex = Duplex & { socket: WebSocket };
 
   class Server extends WebSocket.Server {
+    //@ts-ignore
     on(event: 'connection', cb: (this: WebSocket, socket: WebSocket, request: http.IncomingMessage) => void): this;
+    //@ts-ignore
     on(event: 'error', cb: (this: WebSocket, error: Error) => void): this;
+    //@ts-ignore
     on(event: 'headers', cb: (this: WebSocket, headers: string[], request: http.IncomingMessage) => void): this;
+    //@ts-ignore
     on(event: 'listening', cb: (this: WebSocket) => void): this;
+    //@ts-ignore
     on(event: 'stream', cb: (this: WebSocket, stream: WebSocketDuplex, request: http.IncomingMessage) => void): this;
+    //@ts-ignore
     on(event: string | symbol, listener: (this: WebSocket, ...args: any[]) => void): this;
   }
 
